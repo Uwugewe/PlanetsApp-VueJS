@@ -6,3 +6,12 @@ body {
   color: white;
   text-align: center;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
