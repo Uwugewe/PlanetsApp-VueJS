@@ -1,11 +1,24 @@
 <template>
   <div class="PlanetsLayout">
     <h1>Welcome in Planets App!!</h1>
-    <Pagination v-if="showPlanets" v-bind:links-arr="linksArr" @getDataByLink="getData" />
+
     <button @click="ShowOrHidePlanetsLayout">{{buttonTitle}}</button>
-    <ul v-if="showPlanets" class="planetsList">
-      <Planet v-for="(planetData, i) in planetsData.results" v-bind:key="i" v-bind:planet-data="planetData"/>
-    </ul>
+    
+    <transition name="fade">
+      <Pagination v-if="showPlanets" v-bind:links-arr="linksArr" @getDataByLink="getData" />
+    </transition>
+
+    <transition name='fade'>
+      <ul v-if="showPlanets" class="planetsList">
+        <Planet v-for="(planetData, i) in planetsData.results" v-bind:key="i" v-bind:planet-data="planetData"/>
+      </ul>
+    </transition>
+
+    <div class="startAnimation">
+    
+    </div>
+
+    
   </div>
 </template>
 

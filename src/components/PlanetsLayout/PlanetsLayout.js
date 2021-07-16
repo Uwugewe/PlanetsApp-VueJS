@@ -38,9 +38,6 @@ export default {
     ShowOrHidePlanetsLayout() {
      this.showPlanets = !this.showPlanets; 
     },
-    // clearLinksArr() {
-    //   this.linksArr = [];
-    // }
   },
 
   watch: {
