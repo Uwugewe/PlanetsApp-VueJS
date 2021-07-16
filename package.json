@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-loading-overlay": "^4.0",
     "vue-pagination-2": "^3.0.91"
   },
   "devDependencies": {

@@ -14,7 +14,6 @@ export default {
       showPlanets: false,
       isLoading: false,
       planetsData: false,
-      currentPage: 1,
       firstPage: 'https://swapi.dev/api/planets',
       linksArr: []
     }

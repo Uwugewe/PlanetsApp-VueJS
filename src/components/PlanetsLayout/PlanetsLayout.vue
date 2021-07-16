@@ -14,11 +14,6 @@
       </ul>
     </transition>
 
-    <div class="startAnimation">
-    
-    </div>
-
-    
   </div>
 </template>
 
