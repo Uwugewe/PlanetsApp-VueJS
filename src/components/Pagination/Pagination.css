@@ -1,0 +1,25 @@
+.Pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  margin: 25px 0;
+}
+
+.Pagination .PaginationItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+.Pagination .PaginationItems .PaginationItem {
+  padding: 10px 15px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.Pagination .PaginationItems .active {
+  border: 2px solid white;
+  font-weight: bold;
+}
