@@ -39,9 +39,14 @@ export default {
           this.isLoading = false;
         });
     },
-    ShowOrHidePlanetsLayout() {
+    showOrHidePlanetsLayout() {
      this.showPlanets = !this.showPlanets; 
     },
+    searchPlanetsByName(inputValue) {
+      this.planetsData.results.filter(planet => {
+        console.log(planet);
+      })
+    }
   },
 
   watch: {
@@ -56,7 +61,7 @@ export default {
         )
       }
     },
-    
+
     planetsData() {
       let count = this.planetsData.count;
       // if( count%10 !== 0 )

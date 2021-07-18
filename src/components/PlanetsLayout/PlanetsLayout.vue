@@ -2,7 +2,7 @@
   <div class="PlanetsLayout">
     <h1>Welcome in Planets App!!</h1>
 
-    <button @click="ShowOrHidePlanetsLayout">{{buttonTitle}}</button>
+    <button @click="showOrHidePlanetsLayout">{{buttonTitle}}</button>
 
     <Loading v-if="isLoading"/>
     
@@ -10,7 +10,7 @@
       <Pagination v-if="showPlanets" v-bind:links-arr="linksArr" @getDataByLink="getData" />
     </transition>
 
-    <SearchInput v-if="planetsData"/>
+    <SearchInput v-if="planetsData" @searchPlanetsByName="searchPlanetsByName"/>
 
     <transition name='fade'>
       <ul v-if="planetsData" class="planetsList">
