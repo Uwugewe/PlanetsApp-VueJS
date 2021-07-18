@@ -4,12 +4,17 @@ export default {
   data() {
     return{
       activePageNumber: 0,
-      countPages: this.LinksArr.length
+      countPages: this.LinksArr.length,
+      LinksArrForPaginationElements: [],
     }
   },
 
-  computed: {
-    
+  watch: {
+    LinksArr() {
+      if(this.LinksArr.length !== 0) {
+        this.LinksArrForPaginationElements = this.LinksArr;
+      }
+    }
   },
   
   methods: {
@@ -25,8 +30,4 @@ export default {
       }
     }
   },
-
-  mounted() {
-    console.log(this.LinksArr);
-  }
 }

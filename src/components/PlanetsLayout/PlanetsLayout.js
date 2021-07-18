@@ -1,11 +1,15 @@
 import Planet from '../Planet/Planet.vue'
 import Pagination from '../Pagination/Pagination.vue'
 import axios from 'axios'
+import Loading from '../Loading/Loading.vue'
+import SearchInput from '../SearchInput/SearchInput.vue'
 
 export default {
   components: {
     Planet,
-    Pagination
+    Pagination,
+    Loading,
+    SearchInput
   },
 
   data() {
@@ -26,13 +30,13 @@ export default {
 
   methods: {
     getData(link) {
-      this.linksArr = [];
       this.isLoading = true;
+      this.linksArr = [];
       axios 
         .get(link)
         .then(res => {
           this.planetsData = res.data;
-         
+          this.isLoading = false;
         });
     },
     ShowOrHidePlanetsLayout() {
@@ -42,7 +46,7 @@ export default {
 
   watch: {
     showPlanets() {
-      if (this.showPlanets === true) {
+      if (this.showPlanets) {
         this.getData(this.firstPage);
         return this.buttonTitle = "Close PlanetsLayout"
       } else {
@@ -52,6 +56,7 @@ export default {
         )
       }
     },
+    
     planetsData() {
       let count = this.planetsData.count;
       // if( count%10 !== 0 )
