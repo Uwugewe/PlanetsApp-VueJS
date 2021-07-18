@@ -42,10 +42,11 @@ export default {
     showOrHidePlanetsLayout() {
      this.showPlanets = !this.showPlanets; 
     },
-    searchPlanetsByName(inputValue) {
+    // searchPlanetsByName(inputValue) {
+    searchPlanetsByName() {
       this.planetsData.results.filter(planet => {
         console.log(planet);
-      })
+      });
     }
   },
 
