@@ -2,7 +2,7 @@
   <div class="PlanetsLayout">
     <h1>Welcome in Planets App!!</h1>
 
-    <button @click="showOrHidePlanetsLayout">{{buttonTitle}}</button>
+    <button @click="ShowOrHidePlanetsLayout">{{buttonTitle}}</button>
 
     <Loading v-if="isLoading"/>
     

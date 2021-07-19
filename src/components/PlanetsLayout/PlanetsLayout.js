@@ -20,12 +20,9 @@ export default {
       planetsData: false,
       currentPage: 1,
       firstPage: 'https://swapi.dev/api/planets',
-      linksArr: []
+      linksArr: [],
+      filteredByName: [],
     }
-  },
-
-  computed: {
-
   },
 
   methods: {
@@ -39,14 +36,18 @@ export default {
           this.isLoading = false;
         });
     },
-    showOrHidePlanetsLayout() {
+    ShowOrHidePlanetsLayout() {
      this.showPlanets = !this.showPlanets; 
     },
-    // searchPlanetsByName(inputValue) {
-    searchPlanetsByName() {
-      this.planetsData.results.filter(planet => {
-        console.log(planet);
-      });
+  
+    searchPlanetsByName(inputVal) {
+      console.log(inputVal);
+      if(inputVal.length > 1) {
+        let sorted = this.planetsData.results.filter(planet => {
+          return planet.name.includes(inputVal);
+        });
+        this.filteredByName = sorted;
+      }
     }
   },
 
