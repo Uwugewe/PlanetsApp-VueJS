@@ -14,7 +14,7 @@
 
     <transition name='fade'>
       <ul v-if="planetsData" class="planetsList">
-        <Planet v-for="(planetData, i) in planetsData.results" v-bind:key="i" v-bind:planet-data="planetData"/>
+        <Planet v-for="(planetData, i) in planetsDataArrForView" v-bind:key="i" v-bind:planet-data="planetData" v-bind:input-value="inputValue"/>
       </ul>
     </transition>
 
