@@ -1,5 +1,7 @@
 <template>
-    <input type="text" placeholder="Search planet by name"/>
+    <div>
+        <input type="text" placeholder="Search planet by name" v-model="inputValue"/>
+    </div>
 </template>
 
 <script src="./SearchInput.js"/>
